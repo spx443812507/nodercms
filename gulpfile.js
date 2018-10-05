@@ -68,6 +68,7 @@ var vendorSrcJS = [
   './src/admin/vendor/angular-cookie-4.1.0/angular-cookie.js',
   './src/admin/vendor/angular-ui-router-0.2.18/angular-ui-router.js',
   './src/admin/vendor/ng-file-upload-12.0.4/ng-file-upload-all.js',
+  './src/admin/vendor/cropper/cropper.js',
   './src/admin/vendor/angular-img-cropper-1.0.0/angular-img-cropper.js',
   './src/admin/vendor/custom-bootstrap-3.3.5/js/bootstrap.js',
   './src/admin/vendor/moment-2.13.0/moment.js',
@@ -106,7 +107,8 @@ var vendorSrcCSS = [
   './src/admin/vendor/custom-bootstrap-3.3.5/css/bootstrap.css',
   './src/admin/vendor/bootstrap-markdown-2.10.0/css/bootstrap-markdown.css',
   './src/admin/vendor/bootstrap-markdown-2.10.0/css/bootstrap-markdown-rewrite.css',
-  './src/admin/vendor/bootstrap-datepicker-1.6.1/css/bootstrap-datepicker3.css'
+  './src/admin/vendor/bootstrap-datepicker-1.6.1/css/bootstrap-datepicker3.css',
+  './src/admin/vendor/cropper/cropper.css'
 ];
 
 /**

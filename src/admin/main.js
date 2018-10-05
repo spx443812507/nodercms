@@ -7,7 +7,6 @@ angular.module('nodercms', [
   'ui.router',
   'ngFileUpload',
   'angular-img-cropper',
-  // 'angular-loading-bar',
   'controllers',
   'services',
   'directives',

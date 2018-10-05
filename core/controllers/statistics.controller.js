@@ -30,23 +30,5 @@ module.exports = function (req, res) {
       });
     }
   }, function (err, results) {
-    var data = {
-      hostname: hostname,
-      port: port,
-      version: packageInfo.version,
-      os: {
-        type: os.type(),
-        version: os.release()
-      },
-      node: process.versions.node,
-      mongodb: results.mongodb
-    };
-
-    request({
-      url: 'http://console.nodercms.com/openApi/sites',
-      method: 'POST',
-      body: data,
-      json: true
-    });
   });
 };
