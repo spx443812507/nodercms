@@ -9,30 +9,31 @@ var listsService = require('../services/lists.service');
  * @param {Object} req
  * @param {Object} res
  */
-module.exports = function (req, res) {
+module.exports = function(req, res) {
   async.parallel({
     siteInfo: siteInfoService.get,
-    navigation: function (callback) {
-      categoriesService.navigation({ current: '/' }, callback);
+    navigation: function(callback) {
+      categoriesService.navigation({current: '/'}, callback);
     },
     lists: listsService.all,
-    readingTotal: function (callback) {
+    readingTotal: function(callback) {
       listsService.reading({}, callback);
     },
-    readingDay: function (callback) {
-      listsService.reading({ sort: '-reading.day' }, callback);
+    readingDay: function(callback) {
+      listsService.reading({sort: '-reading.day'}, callback);
     },
-    readingWeek: function (callback) {
-      listsService.reading({ sort: '-reading.week' }, callback);
+    readingWeek: function(callback) {
+      listsService.reading({sort: '-reading.week'}, callback);
     },
-    readingMonth: function (callback) {
-      listsService.reading({ sort: '-reading.month' }, callback);
+    readingMonth: function(callback) {
+      listsService.reading({sort: '-reading.month'}, callback);
     }
-  }, function (err, results) {
+  }, function(err, results) {
     if (err) return res.status(500).end();
 
     res.render('home', {
       layout: 'layout-default',
+      bg: '/themes/' + results.siteInfo.theme + '/img/home-bg.jpeg',
       siteInfo: results.siteInfo,
       navigation: results.navigation,
       lists: results.lists,

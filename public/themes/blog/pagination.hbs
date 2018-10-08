@@ -1,0 +1,7 @@
+<ul class="pagination">
+    {{#foreach list.pagination}}
+        <li class="page-item" {{#if active}}class="active"{{/if}}>
+            <a class="page-link" href="{{url}}">{{name}}</a>
+        </li>
+    {{/foreach}}
+</ul>

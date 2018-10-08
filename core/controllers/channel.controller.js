@@ -10,42 +10,43 @@ var listsService = require('../services/lists.service');
  * @param {Object} res
  * @param {Function} next
  */
-module.exports = function (req, res, next) {
+module.exports = function(req, res, next) {
   var channelPath = '/' + req.params.channel + req.params[0];
 
   categoriesService.one({
     path: channelPath,
     type: 'channel'
-  }, function (err, category) {
+  }, function(err, category) {
     if (err) return res.status(500).end();
 
     if (!category) return next();
 
     async.parallel({
       siteInfo: siteInfoService.get,
-      navigation: function (callback) {
-        categoriesService.navigation({ current: channelPath }, callback);
+      navigation: function(callback) {
+        categoriesService.navigation({current: channelPath}, callback);
       },
-      lists: function (callback) {
+      lists: function(callback) {
         listsService.channel(category, callback);
       },
-      localReadingTotal: function (callback) {
-        listsService.reading({ path: channelPath }, callback);
+      localReadingTotal: function(callback) {
+        listsService.reading({path: channelPath}, callback);
       },
-      localReadingDay: function (callback) {
-        listsService.reading({ path: channelPath, sort: '-reading.day' }, callback);
+      localReadingDay: function(callback) {
+        listsService.reading({path: channelPath, sort: '-reading.day'}, callback);
       },
-      localReadingWeek: function (callback) {
-        listsService.reading({ path: channelPath, sort: '-reading.week' }, callback);
+      localReadingWeek: function(callback) {
+        listsService.reading({path: channelPath, sort: '-reading.week'}, callback);
       },
-      localReadingMonth: function (callback) {
-        listsService.reading({ path: channelPath, sort: '-reading.month' }, callback);
+      localReadingMonth: function(callback) {
+        listsService.reading({path: channelPath, sort: '-reading.month'}, callback);
       }
-    }, function (err, results) {
+    }, function(err, results) {
       if (err) return res.status(500).end();
 
       res.render(_.get(category, 'views.channel'), {
         layout: _.get(category, 'views.layout'),
+        bg: '/themes/' + results.siteInfo.theme + '/img/post-bg.jpg',
         siteInfo: results.siteInfo,
         navigation: results.navigation,
         category: category,

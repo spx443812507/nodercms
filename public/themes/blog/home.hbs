@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+        {{#foreach readingList.total limit="5"}}
+            <div class="post-preview">
+                <a href="{{href}}">
+                    <h2 class="post-title">
+                        {{title}}
+                    </h2>
+                    <h3 class="post-subtitle">
+                        {{abstract}}
+                    </h3>
+                </a>
+                <p class="post-meta">
+                    发表于{{dateformat date format="YYYY-MM-DD HH:mm"}}
+                </p>
+            </div>
+            <hr>
+        {{/foreach}}
+    </div>
+</div>

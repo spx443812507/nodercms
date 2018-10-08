@@ -12,11 +12,11 @@ var listsService = require('../services/lists.service');
  * @param {Object} res
  * @param {Function} next
  */
-module.exports = function (req, res, next) {
+module.exports = function(req, res, next) {
   req.checkQuery({
     'page': {
       optional: true,
-      isInt: { errorMessage: 'page 需为 mongoId' }
+      isInt: {errorMessage: 'page 需为 mongoId'}
     }
   });
 
@@ -28,17 +28,17 @@ module.exports = function (req, res, next) {
   categoriesService.one({
     path: '/' + req.params.column + req.params[0],
     type: 'column'
-  }, function (err, category) {
+  }, function(err, category) {
     if (err) return res.status(500).end();
 
     if (!category) return next();
 
     async.parallel({
       siteInfo: siteInfoService.get,
-      navigation: function (callback) {
-        categoriesService.navigation({ current: category.path }, callback);
+      navigation: function(callback) {
+        categoriesService.navigation({current: category.path}, callback);
       },
-      list: function (callback) {
+      list: function(callback) {
         var query = {
           _id: category._id
         };
@@ -46,15 +46,15 @@ module.exports = function (req, res, next) {
         if (_.get(category, 'mixed.pageSize')) query.pageSize = category.mixed.pageSize;
         if (req.query.page) query.currentPage = parseInt(req.query.page);
 
-        listsService.column(query, function (err, result) {
+        listsService.column(query, function(err, result) {
           if (err) return callback(err);
 
           if (_.get(result, 'pagination.length') <= 1) {
-            delete result.pagination
+            delete result.pagination;
             return callback(null, result);
           }
 
-          var pagination = _.map(result.pagination, function (page) {
+          var pagination = _.map(result.pagination, function(page) {
             if (page.index === 1) {
               page.url = category.path;
             } else {
@@ -70,19 +70,22 @@ module.exports = function (req, res, next) {
           callback(null, result);
         });
       },
-      localReadingTotal: function (callback) {
-        listsService.reading({ _id: category._id }, callback);
+      lists: function(callback) {
+        listsService.channel(category.breadcrumb.length ? category.breadcrumb[0] : category, callback);
       },
-      localReadingDay: function (callback) {
-        listsService.reading({ _id: category._id, sort: '-reading.day' }, callback);
+      localReadingTotal: function(callback) {
+        listsService.reading({_id: category._id}, callback);
       },
-      localReadingWeek: function (callback) {
-        listsService.reading({ _id: category._id, sort: '-reading.week' }, callback);
+      localReadingDay: function(callback) {
+        listsService.reading({_id: category._id, sort: '-reading.day'}, callback);
       },
-      localReadingMonth: function (callback) {
-        listsService.reading({ _id: category._id, sort: '-reading.month' }, callback);
+      localReadingWeek: function(callback) {
+        listsService.reading({_id: category._id, sort: '-reading.week'}, callback);
+      },
+      localReadingMonth: function(callback) {
+        listsService.reading({_id: category._id, sort: '-reading.month'}, callback);
       }
-    }, function (err, results) {
+    }, function(err, results) {
       if (err) return res.status(500).end();
 
       res.render(_.get(category, 'views.column'), {
@@ -91,6 +94,7 @@ module.exports = function (req, res, next) {
         navigation: results.navigation,
         category: category,
         list: results.list,
+        lists: results.lists,
         readingList: {
           total: results.localReadingTotal,
           day: results.localReadingDay,

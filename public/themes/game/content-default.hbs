@@ -1,0 +1,37 @@
+<div class="detail-wrapper">
+    <div class="detail">
+        <img class="logo" src="{{thumbnail.src}}"/>
+        <div class="tag">{{category.name}}</div>
+        <div class="name">{{title}}</div>
+        <div class="description">
+            <div class="tag-tit">
+                <span class="name">简介</span>
+            </div>
+            <div class="desc">{{abstract}}</div>
+        </div>
+        <div class="detail-info">
+            <div class="tag-tit">
+                <span class="name">详细简讯</span>
+            </div>
+            <div class="details">
+                <div class="items">
+                    <span class="tit-name">文件大小:</span>
+                    <span class="size">{{extensions.size}}</span></div>
+                <div class="items">
+                    <span class="tit-name">当前版本:</span>
+                    <span class="size">{{extensions.version}}</span></div>
+                <div class="items">
+                    <span class="tit-name">更新时间:</span>
+                    <span class="size">{{extensions.updateAt}}</span>
+                </div>
+                <div class="items">
+                    <span class="tit-name">开发者:</span>
+                    <span class="size">{{extensions.author}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a class="play-btn" href="{{extensions.url}}">
+    开始
+</a>
