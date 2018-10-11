@@ -1,5 +1,5 @@
 .card-wrapper {
-  overflow: hidden;
+  width: 100%;
 }
 
 .card {
@@ -40,7 +40,7 @@
       display: flex;
       align-items: center;
       margin-top: pxToRem(10px);
-      color: $gray;
+      color: $gray01;
 
       .iconfont {
         margin-right: pxToRem(7.5px);
@@ -57,8 +57,7 @@
   line-height: pxToRem(72px);
   color: $gray;
   box-sizing: border-box;
-  overflow: hidden;
-  margin: pxToRem(40px) 0 pxToRem(10px);
+  margin: pxToRem(10px) 0 pxToRem(10px);
   div {
     height: pxToRem(72px);
   }
@@ -66,7 +65,7 @@
     height: pxToRem(42px);
     width: pxToRem(8px);
     margin: pxToRem(12px) pxToRem(20px) 0 0;
-    background-color: rgb(66, 103, 178);
+    background-color: $purple;
     float: left;
   }
   div.title {
@@ -77,9 +76,9 @@
     float: right;
     padding: 0 pxToRem(32px);
     font-size: pxToRem(28px);
-    color: rgb(66, 103, 178);
+    color: $gray03;
     &:active {
-      background: #efefef;
+      background: $gray02;
     }
   }
 }
@@ -94,9 +93,7 @@
   padding: pxToRem(16px) pxToRem(16px) pxToRem(80px);
   box-sizing: border-box;
   height: auto;
-  background: #f5f5f5;
   .detail {
-    background: #fff;
     width: 100%;
     min-height: pxToRem(600px);
     border-radius: pxToRem(4px);
@@ -117,7 +114,7 @@
       border-radius: pxToRem(32px);
       text-align: center;
       color: white;
-      background: rgb(66, 103, 178);
+      background: $purple;
     }
     .name {
       height: pxToRem(48px);
@@ -126,7 +123,7 @@
       line-height: pxToRem(48px);
       text-align: center;
       margin-top: pxToRem(20px);
-      color: rgba(71, 74, 79, .87);
+      color: $gray;
     }
     .description {
       margin-top: pxToRem(4px);
@@ -137,7 +134,7 @@
         padding: pxToRem(32px);
         text-indent: 2em;
         font-size: pxToRem(28px);
-        color: #474a4f;
+        color: $gray;
       }
     }
     .tag-tit {
@@ -151,7 +148,7 @@
         font-size: pxToRem(36px);
         height: pxToRem(42px);
         line-height: pxToRem(42px);
-        color: #7e848c;
+        color: $gray02;
         font-weight: 700;
         letter-spacing: normal;
         margin-top: 0;
@@ -177,7 +174,7 @@
           }
           span.tit-name {
             padding: pxToRem(24px) 0;
-            color: #7e848c;
+            color: $gray02;
           }
           span.size {
             color: #474a4f;
@@ -203,8 +200,8 @@
   z-index: 999;
   transform: translate(-50%, -90%);
   animation: scales .5s infinite linear;
-  color: white;
-  background: rgb(66, 103, 178);
+  color: $white;
+  background: $purple;
 }
 
 @keyframes scales {
