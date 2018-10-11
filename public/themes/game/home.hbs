@@ -1,24 +1,25 @@
 <div class="game-title">
     <div class="flag"></div>
     <div class="title">热门游戏</div>
-    <!--<a class="see-all" href="{{path}}">全部</a>-->
 </div>
 <div class="card-wrapper">
     {{#foreach readingList.total limit="5"}}
         <a class="card" href="{{href}}">
-            <dl>
-                <dt class="card-img">
-                    <img alt="img" src="{{thumbnail.src}}">
-                </dt>
-                <dd class="card-content">
-                    <span class="card-name">{{title}}</span>
-                    <span class="tit-start">
-                        <span>{{category.name}}</span>
-                        <i class="iconfont icon-star"></i>
-                        <span class="start">{{reading.total}}</span>
-                    </span>
-                </dd>
-            </dl>
+            <div class="card-img">
+                <img alt="img" src="{{thumbnail.src}}">
+            </div>
+            <div class="card-info">
+                <section class="title">{{title}}</section>
+                <section>
+                    <section class="author">
+                        <span>{{extensions.author}}</span>
+                    </section>
+                    <section class="social-bar">
+                        <i class="iconfont icon-eye"></i>
+                        <span>{{reading.total}}</span>
+                    </section>
+                </section>
+            </div>
         </a>
     {{/foreach}}
 </div>
@@ -31,19 +32,21 @@
     <div class="card-wrapper">
         {{#foreach contents limit="5"}}
             <a class="card" href="{{href}}">
-                <dl>
-                    <dt class="card-img">
-                        <img alt="img" src="{{thumbnail.src}}">
-                    </dt>
-                    <dd class="card-content">
-                        <span class="card-name">{{title}}</span>
-                        <span class="tit-start">
-                            <span>{{category.name}}</span>
-                            <i class="iconfont icon-star"></i>
-                            <span class="start">{{reading.total}}</span>
-                        </span>
-                    </dd>
-                </dl>
+                <div class="card-img">
+                    <img alt="img" src="{{thumbnail.src}}">
+                </div>
+                <div class="card-info">
+                    <section class="title">{{title}}</section>
+                    <section>
+                        <section class="author">
+                            <span>{{extensions.author}}</span>
+                        </section>
+                        <section class="social-bar">
+                            <i class="iconfont icon-eye"></i>
+                            <span>{{reading.total}}</span>
+                        </section>
+                    </section>
+                </div>
             </a>
         {{/foreach}}
     </div>

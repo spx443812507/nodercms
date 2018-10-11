@@ -3,18 +3,16 @@
 }
 
 .card {
-  width: 46%;
-  height: pxToRem(375px);
-  margin: pxToRem(15px);
-  padding: pxToRem(15px);
-  float: left;
-  border-radius: pxToRem(4px);
-  box-shadow: 0 pxToRem(2px) pxToRem(12px) rgba(0, 0, 0, .117647), 0 pxToRem(2px) pxToRem(8px) rgba(0, 0, 0, .117647);
-  box-sizing: border-box;
+  display: flex;
+  width: 96%;
+  height: pxToRem(280px);
+  padding: pxToRem(20px) pxToRem(30px);
+  color: rgb(51, 51, 51);
   .card-img {
     display: block;
     width: pxToRem(226px);
     height: pxToRem(226px);
+    overflow: hidden;
     margin: pxToRem(12px) auto 0;
     border-radius: pxToRem(20px);
     img {
@@ -24,41 +22,28 @@
       border-radius: pxToRem(20px);
     }
   }
-  .card-content {
-    display: block;
-    padding: pxToRem(20px) pxToRem(32px) 0;
-    box-sizing: border-box;
-    width: 100%;
-    .card-name {
-      display: -webkit-box;
-      height: pxToRem(60px);
-      font-size: pxToRem(30px);
-      font-weight: 400;
-      box-sizing: border-box;
-      color: rgba(71, 74, 79, .87);
-      line-height: pxToRem(72px);
-      white-space: normal;
-      overflow: hidden;
+  .card-info {
+    display: flex;
+    width: 50.7%;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-left: 0.27rem;
+    padding: pxToRem(20px) 0px;
+    .title {
+      font-size: pxToRem(48px);
+      color: $gray;
     }
-    .tit-start {
-      width: 100%;
-      height: pxToRem(36px);
+
+    .social-bar {
       font-size: pxToRem(24px);
-      color: rgba(71, 74, 79, .54);
-      overflow: hidden;
-      display: table;
-      vertical-align: middle;
-      span {
-        float: left;
-      }
-      span.start {
-        float: right;
-        margin-right: pxToRem(4px);
-      }
-      .icon-star {
-        float: right;
-        font-size: pxToRem(20px);
-        color: $blue;
+      display: flex;
+      align-items: center;
+      margin-top: pxToRem(10px);
+      color: $gray;
+
+      .iconfont {
+        margin-right: pxToRem(7.5px);
       }
     }
   }
@@ -67,17 +52,14 @@
 .game-title {
   width: 100%;
   height: pxToRem(72px);
-  font-size: pxToRem(36px);
+  font-size: pxToRem(48px);
   font-weight: 700;
   line-height: pxToRem(72px);
-  background-color: #fff;
-  color: #7e848c;
-  padding-left: pxToRem(72px);
+  color: $gray;
   box-sizing: border-box;
   overflow: hidden;
   margin: pxToRem(40px) 0 pxToRem(10px);
   div {
-    float: left;
     height: pxToRem(72px);
   }
   div.flag {
@@ -85,6 +67,7 @@
     width: pxToRem(8px);
     margin: pxToRem(12px) pxToRem(20px) 0 0;
     background-color: rgb(66, 103, 178);
+    float: left;
   }
   div.title {
     float: left;
