@@ -119,7 +119,7 @@ exports.navigation = function (options, callback) {
       tree = tree || [];
 
       tree.unshift({
-        name: '首页',
+        name: 'Home',
         path: '/',
         isShow: true
       });

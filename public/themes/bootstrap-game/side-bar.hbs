@@ -71,28 +71,4 @@
             {{/foreach}}
         </ul>
     </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">栏目阅读今日排行</div>
-        <ul class="list-group">
-            {{#foreach readingList.day limit="5"}}
-                <a href="{{href}}" class="list-group-item text-overflow">
-                    <div class="card-img">
-                        <img alt="img" src="{{thumbnail.src}}">
-                    </div>
-                    <div class="card-info">
-                        <section class="title">{{title}}</section>
-                        <section>
-                            <section class="author">
-                                <span>{{category.name}}</span>
-                            </section>
-                            <section class="social-bar">
-                                <i class="iconfont icon-eye"></i>
-                                <span>{{reading.total}}</span>
-                            </section>
-                        </section>
-                    </div>
-                </a>
-            {{/foreach}}
-        </ul>
-    </div>
 </div>
