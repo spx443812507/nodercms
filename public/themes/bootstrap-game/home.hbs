@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div id="carousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    {{#features 'home-focus-pictures'}}
+                        <li data-target="#carousel" data-slide-to="{{@index}}" {{#if @first}}class="active"{{/if}}></li>
+                    {{/features}}
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    {{#features 'home-focus-pictures'}}
+                        <div class="item {{#if @first}}active{{/if}}">
+                            <img src="{{thumbnail.src}}" alt="{{title}}">
+                            <div class="carousel-caption">
+                                <h3>
+                                    <a href="{{url}}" title="{{title}}" target="_blank">{{title}}</a>
+                                </h3>
+                            </div>
+                        </div>
+                    {{/features}}
+                </div>
+                <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div class="row">
+                {{#foreach lists}}
+                    <div class="col-md-6">
+                        <div class="panel panel-less">
+                            <div class="panel-heading">
+                                {{name}}
+                                <a class="pull-right" href="{{path}}">More</a>
+                            </div>
+                            <div class="list-group list-group-less">
+                                {{#foreach contents limit="5"}}
+                                    <a href="{{href}}" class="list-group-item text-overflow">
+                                        <div class="card-img">
+                                            <img alt="img" src="{{thumbnail.src}}">
+                                        </div>
+                                        <div class="card-info">
+                                            <section class="title">{{title}}</section>
+                                            <section>
+                                                <section class="author">
+                                                    <span>{{category.name}}</span>
+                                                </section>
+                                                <section class="social-bar">
+                                                    <i class="iconfont icon-eye"></i>
+                                                    <span>{{reading.total}}</span>
+                                                </section>
+                                            </section>
+                                        </div>
+                                    </a>
+                                {{/foreach}}
+                            </div>
+                        </div>
+                    </div>
+                {{/foreach}}
+            </div>
+        </div>
+        {{> side-bar}}
+    </div>
+</div>

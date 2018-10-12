@@ -13,7 +13,7 @@
     width: pxToRem(226px);
     height: pxToRem(226px);
     overflow: hidden;
-    margin: pxToRem(12px) auto 0;
+    margin: auto 0;
     border-radius: pxToRem(20px);
     img {
       display: block;
@@ -33,6 +33,10 @@
     .title {
       font-size: pxToRem(48px);
       color: $gray;
+    }
+
+    .author {
+      color: $gray01;
     }
 
     .social-bar {

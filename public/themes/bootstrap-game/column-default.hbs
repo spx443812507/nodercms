@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                {{#foreach category.breadcrumb}}
+                    <li><a href="{{path}}">{{name}}</a></li>
+                {{/foreach}}
+                <li class="active">{{category.name}}</li>
+            </ol>
+            {{#foreach list.contents}}
+                <div class="media">
+                    <h3 class="media-heading text-overflow margin-bottom-10">
+                        <a href="{{url}}" title="{{title}}">{{title}}</a>
+                    </h3>
+                    {{#if thumbnail}}
+                        <div class="media-left">
+                            <img class="media-object" src="{{thumbnail.src}}" title="{{thumbnail.fileName}}"
+                                 alt="{{thumbnail.description}}" width="100">
+                        </div>
+                    {{/if}}
+                    <div class="media-body text-muted">
+                        {{#if abstract}}
+                            <p>{{abstract}}</p>
+                        {{/if}}
+                        <p>
+                            <span>{{dateformat date format="YYYY/MM/DD HH:mm"}}</span>
+                            <span class="pull-right"><i class="iconfont icon-eye"></i> {{reading.total}}</span>
+                        </p>
+                    </div>
+                </div>
+                <hr>
+            {{/foreach}}
+            <nav class="text-center">
+                <ul class="pagination">
+                    {{#foreach list.pagination}}
+                        <li {{#if active}}class="active"{{/if}}>
+                            <a href="{{url}}">{{name}}</a>
+                        </li>
+                    {{/foreach}}
+                </ul>
+            </nav>
+        </div>
+        {{> side-bar}}
+    </div>
+</div>
