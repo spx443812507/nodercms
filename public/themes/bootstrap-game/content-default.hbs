@@ -11,20 +11,38 @@
             </ol>
             <div class="page-header text-center">
                 <h1>{{title}}</h1>
-                <p class="text-muted">
+                <img class="logo" src="{{thumbnail.src}}"/>
+                <p class="social-bar">
                     {{dateformat date format="YYYY/MM/DD HH:mm"}}　<i class="iconfont icon-eye"></i> {{reading.total}}　
                 </p>
             </div>
             {{#if abstract}}
                 <div class="well text-muted">{{abstract}}</div>
             {{/if}}
-            <div class="content">
-                {{{content}}}
+            <div class="detail-info">
+                <div class="tag-tit">
+                    <span class="name">Details</span>
+                </div>
+                <div class="details">
+                    <div class="items">
+                        <span class="tit-name">Size:</span>
+                        <span class="size">{{extensions.size}}</span></div>
+                    <div class="items">
+                        <span class="tit-name">Version:</span>
+                        <span class="size">{{extensions.version}}</span></div>
+                    <div class="items">
+                        <span class="tit-name">Update Date:</span>
+                        <span class="size">{{extensions.updateAt}}</span>
+                    </div>
+                    <div class="items">
+                        <span class="tit-name">Author:</span>
+                        <span class="size">{{extensions.author}}</span>
+                    </div>
+                </div>
             </div>
             {{#if tags}}
-                <hr>
-                <div>
-                    Tags：{{#foreach tags}}<span>{{this}}</span> {{/foreach}}
+                <div class="tags">
+                    Tags：{{#foreach tags}}<span class="tag">{{this}}</span> {{/foreach}}
                 </div>
             {{/if}}
             <a class="play-btn" href="{{extensions.url}}">

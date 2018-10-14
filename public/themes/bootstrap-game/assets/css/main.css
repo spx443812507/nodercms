@@ -3,6 +3,7 @@ body {
     font-family: Helvetica, Arial, "Hiragino Sans GB", sans-serif;
     font-size: 14px;
     line-height: 20px;
+    background: #090909;
 }
 
 a {
@@ -75,8 +76,17 @@ h6, .h6 {
 
 .page-header {
     padding-bottom: 9px;
-    margin: 20px 0 30px;
-    border-bottom: 1px solid #eeeeee;
+    margin: 20px 0 10px;
+    border-bottom: none;
+}
+
+.page-header h1 {
+    color: #ffffff;
+}
+
+.page-header .social-bar {
+    margin: 10px 0 10px;
+    color: #adadad;
 }
 
 .lead {
@@ -91,23 +101,32 @@ h6, .h6 {
     margin-bottom: -15px;
 }
 
-.panel-less {
-    border-color: #ddd
+.panel-less, .panel-default {
+    border-color: #464646;
 }
 
-.panel-less > .panel-heading {
-    color: #333;
-    background-color: #f5f5f5;
-    border-color: #ddd
+.panel-less > .panel-heading, .panel-default > .panel-heading {
+    color: #806EC2;
+    background-color: #232323;
+    border-color: #232323;
+}
+
+.panel-heading .see-all {
+    color: #7168d5;
 }
 
 .list-group-item {
     display: flex;
+    background: #353535;
 }
 
-.list-group.list-group-less > .list-group-item {
-    border: 1px dashed #ddd;
+.list-group-item {
+    border: 1px solid #232323;
     border-width: 1px 0;
+}
+
+a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
+    background-color: #464646;
 }
 
 .list-group.list-group-less .card-img {
@@ -139,6 +158,7 @@ h6, .h6 {
     justify-content: space-between;
     margin-left: 20px;
     padding: 5px 0px;
+    color: #ffffff;
 }
 
 .list-group .card-info .title {
@@ -147,6 +167,7 @@ h6, .h6 {
 
 .list-group .card-info .author {
     font-size: 12px;
+    color: #c3c3c3;
 }
 
 .list-group .card-info .social-bar {
@@ -169,7 +190,21 @@ h6, .h6 {
 }
 
 .media {
-    height: 133px;
+    height: auto;
+    background: #232323;
+    padding: 10px;
+}
+
+.media-heading a {
+    color: #7168d5;
+}
+
+.breadcrumb {
+    background-color: #232323;
+}
+
+.breadcrumb a {
+    color: #7168d5;
 }
 
 .content p {
@@ -215,22 +250,75 @@ h6, .h6 {
     border-top: 2px solid #ddd
 }
 
+.well {
+    background: #353535;
+    color: #c3c3c3;
+    border: none;
+}
+
+.tags {
+    margin-top: 20px;
+    color: #878787;
+}
+
+.tag {
+    padding: 2px 5px;
+    border-radius: 5px;
+    background: #878787;
+    color: #333;
+}
+
+.detail-info {
+    margin-top: 10px;
+    border-top: 4px solid rgba(0, 0, 0, .12);
+    border-bottom: 4px solid rgba(0, 0, 0, .12);
+    padding: 10px;
+    background: #353535;
+    color: #c3c3c3;
+}
+
+.detail-info .details {
+    padding: 16px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.detail-info .details .items {
+    width: 50%;
+    float: left;
+}
+
+.detail-info .details .items span {
+    text-indent: 2em;
+    display: block;
+    font-size: 14px;
+}
+
+.detail-info .details .items span.tit-name {
+    padding: 10px 0;
+    color: #7e848c;
+}
+
+.detail-info .details .items span.size {
+    font-size: 14px;
+}
+
 .play-btn {
     position: fixed;
-    bottom: 200px;
-    margin-left: -130px;
+    bottom: 50px;
+    margin-left: -100px;
     left: 50%;
     right: 0;
-    width: 275px;
-    height: 55px;
-    line-height: 55px;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
     border-radius: 30px;
     text-align: center;
     z-index: 999;
     transform: translate(-50%, -90%);
     animation: scales .5s infinite linear;
     color: #ffffff;
-    background: #2a82ec;
+    background: #7168d5;
 }
 
 @keyframes scales {
@@ -259,39 +347,39 @@ h6, .h6 {
 }
 
 .navbar-blue {
-    background-color: #2a82ec;
+    background-color: #353535;
     border: none;
     border-radius: 0;
 }
 
 .navbar-blue .navbar-header {
-    background-color: #fff;
-    border-bottom: 1px solid #ccc;
+    background-color: #242424;
+    border-bottom: 1px solid #232323;
 }
 
 .navbar-blue .navbar-header .navbar-toggle:focus,
 .navbar-blue .navbar-header .navbar-toggle:hover {
-    background-color: #f9f9f9;
-    border-color: #f9f9f9
+    background-color: #464646;
+    border-color: #464646;
 }
 
 .navbar-blue .navbar-toggle .icon-bar {
-    background-color: #2a82ec;
+    background-color: #7168d5;
 }
 
 .navbar-blue .navbar-nav > li > a {
-    color: #fff;
+    color: #e2e2e4;
 }
 
 .navbar-blue .navbar-nav > li > a:focus,
 .navbar-blue .navbar-nav > li > a:hover {
-    background-color: #226ac0;
+    background-color: #464646;
 }
 
 .navbar-blue .navbar-nav > .active > a,
 .navbar-blue .navbar-nav > .active > a:focus,
 .navbar-blue .navbar-nav > .active > a:hover {
-    background-color: #226ac0;
+    background-color: #464646;
 }
 
 .navbar-blue .navbar-collapse,
@@ -318,4 +406,12 @@ h6, .h6 {
     margin: 200px auto;
     text-align: center;
     color: #777;
+}
+
+.jumbotron {
+    background-color: #353535;
+}
+
+.jumbotron a {
+    color: #7168d5;
 }
