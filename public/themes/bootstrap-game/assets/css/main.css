@@ -120,6 +120,7 @@ h6, .h6 {
     background: #353535;
     border: 1px solid #232323;
     border-width: 1px 0;
+    padding: 8px 10px;
 }
 
 a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {

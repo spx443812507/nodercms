@@ -38,17 +38,3 @@
     </div>
   </div>
 </nav>
-{{#foreach navigation}}
-  {{#if current}}
-    {{#if nodes}}
-      <div class="container">
-        <div class="navbar-sub-category">
-          {{#foreach nodes}}
-            <a class="btn btn-link" href="{{#if path}}{{path}}{{else}}{{mixed.url}}{{/if}}" title="{{name}}" role="button">{{name}}</a>
-          {{/foreach}}
-        </div>
-        <hr>
-      </div>
-    {{/if}}
-  {{/if}}
-{{/foreach}}
