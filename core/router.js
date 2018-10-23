@@ -203,6 +203,9 @@ module.exports = {
   // 内容页
   '/:content*': { get: 'content' },
 
+  // 内容页
+  '/:content*/play': { get: 'play' },
+
   // 错误页
   '/*': { get: 'errors.notFound' }
 };
