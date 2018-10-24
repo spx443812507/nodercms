@@ -26,7 +26,7 @@ module.exports = function (req, res, next) {
     async.auto({
       siteInfo: siteInfoService.get,
       navigation: function (callback) {
-        categoriesService.navigation({ current: categoryPath }, callback);
+        categoriesService.navigation({ }, callback);
       },
       category: function (callback) {
         categoriesService.one({
