@@ -91,6 +91,7 @@ module.exports = function(req, res, next) {
       res.render(_.get(category, 'views.column'), {
         layout: _.get(category, 'views.layout'),
         siteInfo: results.siteInfo,
+        bg: '/themes/' + results.siteInfo.theme + '/img/' + category.description + '-bg.jpg',
         navigation: results.navigation,
         category: category,
         list: results.list,

@@ -58,6 +58,7 @@ module.exports = function (req, res, next) {
       res.render(_.get(results.category, 'views.content'), {
         layout: _.get(results.category, 'views.layout'),
         siteInfo: results.siteInfo,
+        bg: content.thumbnail.src,
         navigation: results.navigation,
         category: results.category,
         readingList: {

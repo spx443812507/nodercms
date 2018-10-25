@@ -12,6 +12,11 @@ p {
     text-decoration: underline;
   }
 }
+ul,ol{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
 h1,
 h2,

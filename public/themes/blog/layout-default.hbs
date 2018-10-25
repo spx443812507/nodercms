@@ -3,13 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="keywords" content="{{#if category}}{{category.keywords}},{{/if}}{{siteInfo.keywords}}">
+    <meta name="description" content="{{#if category}}{{category.description}} —— {{/if}}{{siteInfo.description}}">
 
     <title>{{#if title}}{{title}} - {{/if}}{{#if category}}{{category.name}} - {{/if}}{{siteInfo.title}}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/themes/{{siteInfo.theme}}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/themes/{{siteInfo.theme}}/vendor/lightbox2/dist/css/lightbox.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href="/themes/{{siteInfo.theme}}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -17,7 +18,7 @@
     <link href='/themes/{{siteInfo.theme}}/css/font2.css' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
-    <link href="/themes/{{siteInfo.theme}}/css/site.css" rel="stylesheet">
+    <link href="/themes/{{siteInfo.theme}}/css/clean-blog.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -45,8 +46,9 @@
 <!-- Bootstrap core JavaScript -->
 <script src="/themes/{{siteInfo.theme}}/vendor/jquery/jquery.min.js"></script>
 <script src="/themes/{{siteInfo.theme}}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/themes/{{siteInfo.theme}}/vendor/lightbox2/dist/js/lightbox.js"></script>
 
 <!-- Custom scripts for this template -->
-<script src="/themes/{{siteInfo.theme}}/js/clean-blog.min.js"></script>
+<script src="/themes/{{siteInfo.theme}}/js/clean-blog.js"></script>
 </body>
 </html>

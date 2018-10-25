@@ -1,36 +1,23 @@
-<div class="container">
-    <h1>博客</h1>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-8 col-md-9">
-            <h4 class="text-weight-normal">显示 {{ list.contents.length}} 篇.</h4>
-            <div class="blog">
-                {{#foreach list.contents}}
-                    <div class="post">
-                        <h2><a href="{{url}}" title="{{title}}">{{{title}}}</a></h2>
-                        <p class="lead text-muted">发布在</p>
+<div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+        {{#foreach list.contents}}
+            <div class="row">
+                <div class="col-md-7">
+                    <a href="{{url}}">
                         {{#if thumbnail}}
-                            <img src="{{thumbnail.src}}" title="{{thumbnail.fileName}}" alt="{{thumbnail.description}}"
-                                 class="img pull-right">
+                            <img src="{{thumbnail.src}}" title="{{thumbnail.fileName}}"
+                                 alt="{{thumbnail.description}}" class="img-fluid rounded mb-3 mb-md-0">
                         {{/if}}
-                        {{#if abstract}}
-                            <p>{{abstract}}</p>
-                        {{/if}}
-                        <p class="read-more"><a href="{{url}}">阅读</a></p>
-                    </div>
-                {{/foreach}}
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <h3>{{title}}</h3>
+                    <p>{{abstract}}</p>
+                    <a class="btn btn-primary" href="{{url}}">阅读更多</a>
+                </div>
             </div>
-        </div>
-        <div class="col-sm-4 col-md-3">
-            <h2>分类</h2>
-            <div style="margin-top: 70px;" class="list-group">
-                <a href="/travel" class="list-group-item">所有分类</a>
-                {{#foreach lists}}
-                    <a href="{{path}}" class="list-group-item">{{name}}</a>
-                {{/foreach}}
-            </div>
-        </div>
+            <hr>
+        {{/foreach}}
     </div>
-    {{>pagination}}
 </div>
+

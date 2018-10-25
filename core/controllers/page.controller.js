@@ -29,6 +29,7 @@ module.exports = function (req, res, next) {
       res.render(page.views.page, {
         layout: page.views.layout,
         siteInfo: results.siteInfo,
+        bg: '/themes/' + results.siteInfo.theme + '/img/about-bg.jpg',
         navigation: results.navigation,
         category: page,
         content: page.mixed.pageContent,

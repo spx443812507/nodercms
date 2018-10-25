@@ -1,27 +1,22 @@
-<div class="container">
-    <h1>博客</h1>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-8 col-md-9">
-            <h4 class="text-weight-normal">显示 {{ list.contents.length}} 篇.</h4>
-            <div class="blog">
-                {{#foreach list.contents}}
-                    <div class="post">
-                        <h2><a href="{{url}}" title="{{title}}">{{{title}}}</a></h2>
-                        <p class="lead text-muted">发布在</p>
-                        {{#if thumbnail}}
-                            <img src="{{thumbnail.src}}" title="{{thumbnail.fileName}}" alt="{{thumbnail.description}}"
-                                 class="img pull-right">
-                        {{/if}}
-                        {{#if abstract}}
-                            <p>{{abstract}}</p>
-                        {{/if}}
-                        <p class="read-more"><a href="{{url}}">阅读</a></p>
-                    </div>
-                {{/foreach}}
-            </div>
-        </div>
+<div class="row">
+    <div class="col-lg-10 col-md-12 mx-auto">
+        <ul class="photo-list">
+            {{#foreach list.contents}}
+                <li class="col-lg-4 col-md-4">
+                    <a href="{{url}}" class="photo-item">
+                        <div class="photo-img">
+                            {{#if thumbnail}}
+                                <img src="{{thumbnail.src}}" title="{{thumbnail.fileName}}"
+                                     alt="{{thumbnail.description}}" class="img pull-right">
+                            {{/if}}
+                        </div>
+                        <div class="mt-2">
+                            <span class="photo-name">{{title}}</span>
+                            <i class="photo-num">{{extensions.pictures.length}}张</i>
+                        </div>
+                    </a>
+                </li>
+            {{/foreach}}
+        </ul>
     </div>
-    {{>pagination}}
 </div>

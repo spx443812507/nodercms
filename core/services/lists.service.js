@@ -120,7 +120,7 @@ exports.channel = function (options, callback) {
 
       categories
         .find({ path: regex, type: 'column' })
-        .select('name path sort type isShow')
+        .select('name path sort type isShow description')
         .sort('sort')
         .lean()
         .exec(callback);
@@ -283,7 +283,7 @@ exports.reading = function (options, callback) {
         contents.find(query)
           .sort(sort)
           .limit(limit)
-          .select('category title alias user date reading thumbnail')
+          .select('category title abstract alias user date reading thumbnail')
           .populate('category', 'name path')
           .populate('user', 'nickname email')
           .populate('thumbnail', 'fileName description date')
@@ -316,7 +316,7 @@ exports.reading = function (options, callback) {
     contents.find(query)
       .sort(sort)
       .limit(limit)
-      .select('category title alias user date reading thumbnail')
+      .select('category title abstract alias user date reading thumbnail')
       .populate('category', 'name path')
       .populate('user', 'nickname email')
       .populate('thumbnail', 'fileName description date')

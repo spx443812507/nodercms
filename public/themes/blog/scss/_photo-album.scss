@@ -1,0 +1,85 @@
+//画册样式
+.photo-list{
+  width: 100%;
+  overflow: hidden;
+  li{
+    //width: 30%;
+    float: left;
+    //margin-left: 5%;
+    margin-bottom: 30px;
+    .photo-item{
+      display: block;
+    }
+    .photo-img{
+      width: 100%;
+      height: 220px;
+      img{
+        width: 100%;
+        height: 100%;
+        display: block;
+        border-radius: 10px;
+      }
+    }
+  }
+  .photo-name{
+    color:$gray-900;
+    font-size: 16px;
+  }
+  .photo-num{
+    color:$gray-500;
+    font-size: 12px;
+    font-style: normal;
+  }
+}
+//媒体查询
+//ipad等平板屏幕
+@media (min-width: 768px) {
+}
+
+//ip6/7/8plus大屏幕手机
+@media(min-width: 414px) and (max-width: 576px) {
+  .photo-list{
+    li{
+      //width: 47.5%;
+      .photo-img{
+        height: 180px;
+      }
+      &:first-of-type,&:nth-of-type(2n+1){
+        margin-left: 0;
+      }
+    }
+
+  }
+}
+
+//ip6/7/8等常规屏幕手机
+@media(min-width: 321px) and (max-width: 413px){
+  .photo-list{
+    li{
+      //width: 47.5%;
+      .photo-img{
+        height: 160px;
+      }
+      &:first-of-type,&:nth-of-type(2n+1){
+        margin-left: 0;
+      }
+    }
+
+  }
+}
+
+//ip5／SE等小屏幕手机
+@media (max-width: 320px) {
+  .photo-list{
+    li{
+      //width: 100%;
+      margin-left: 0;
+      .photo-img{
+        height:160px;
+      }
+    }
+    .photo-name{
+      font-size: 14px;
+    }
+  }
+}

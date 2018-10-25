@@ -1,0 +1,78 @@
+//画册详情页样式
+.photo-place{
+  overflow: hidden;
+  span{
+    display: inline-block;
+    font-size: 16px;
+    color:$gray-700;
+  }
+}
+.icon-place{
+  width:20px;
+  height:20px;
+  display: inline-block;
+  vertical-align: middle;
+  img{
+    width: 100%;
+    height:100%;
+    display: block;
+  }
+}
+.photo-sketch{
+  font-size: 14px;
+  line-height: 1.8;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: $gray-600;
+}
+
+.photo-details{
+  width: 100%;
+  overflow: hidden;
+  li{
+    float: left;
+    height: 220px;
+    margin-bottom: 20px;
+    .photo-img{
+      width: 100%;
+      height:100%;
+      img{
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+    }
+
+  }
+}
+//媒体查询
+//ipad等平板屏幕
+@media (min-width: 768px) {
+}
+
+//ip6/7/8plus大屏幕手机
+@media(min-width: 414px) and (max-width: 576px) {
+  .photo-details{
+    li{
+      height:180px;
+    }
+  }
+}
+
+//ip6/7/8等常规屏幕手机
+@media(min-width: 321px) and (max-width: 413px){
+  .photo-details{
+    li{
+      height:160px;
+    }
+  }
+}
+
+//ip5／SE等小屏幕手机
+@media (max-width: 320px) {
+  .photo-details{
+    li{
+      height:160px;
+    }
+  }
+}

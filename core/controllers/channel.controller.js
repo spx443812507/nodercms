@@ -46,7 +46,7 @@ module.exports = function(req, res, next) {
 
       res.render(_.get(category, 'views.channel'), {
         layout: _.get(category, 'views.layout'),
-        bg: '/themes/' + results.siteInfo.theme + '/img/post-bg.jpg',
+        bg: '/themes/' + results.siteInfo.theme + '/img/world.jpg',
         siteInfo: results.siteInfo,
         navigation: results.navigation,
         category: category,

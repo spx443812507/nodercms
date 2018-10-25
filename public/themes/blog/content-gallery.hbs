@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-lg-10 col-md-12 mx-auto">
+        <ul class="photo-details">
+            {{#foreach extensions.pictures}}
+                <li class="col-lg-4 col-md-4">
+                    <div class="photo-img">
+                        <a href="{{src}}" data-lightbox="roadtrip">
+                            <img src="{{src}}"/>
+                        </a>
+                    </div>
+                </li>
+            {{/foreach}}
+        </ul>
+    </div>
+</div>

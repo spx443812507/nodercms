@@ -1,36 +1,41 @@
 <div class="container">
-    <h1>旅程</h1>
-</div>
-<div class="container">
     <div class="row">
-        <div class="col-sm-8 col-md-9">
-            <h4 class="text-weight-normal">显示 {{ data.posts.results.length}} 篇.</h4>
-            <div class="blog">
-                {{# each readingList.total}}
-                    <div class="post">
-                        <h2><a href="{{href}}">{{{title}}}</a></h2>
-                        <p class="lead text-muted">发布在 <a href="{{category.path}}">{{{category.name}}}</a></p>
-                        {{#if thumbnail}}
-                            <img src="{{thumbnail.src}}" title="{{thumbnail.fileName}}" alt="{{thumbnail.description}}"
-                                 class="img pull-right">
-                        {{/if}}
-                        {{#if abstract}}
-                            <p>{{abstract}}</p>
-                        {{/if}}
-                        <p class="read-more"><a href="{{href}}">阅读</a></p>
-                    </div>
-                {{/each}}
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-3">
-            <h2>分类</h2>
-            <div style="margin-top: 70px;" class="list-group">
-                <a href="/travel" class="list-group-item">所有分类</a>
-                {{#foreach lists}}
-                    <a href="{{path}}" class="list-group-item">{{name}}</a>
+        <!--左-->
+        <div class="col-lg-7 col-md-7">
+            <ul class="article-list">
+                {{#foreach readingList.total limit="5"}}
+                    <li>
+                        <a href="{{url}}" class="row">
+                            <div class="article-img col-lg-5 col-md-5">
+                                {{#if thumbnail}}
+                                    <img src="{{thumbnail.src}}" title="{{thumbnail.fileName}}"
+                                         alt="{{thumbnail.description}}" class="img pull-right">
+                                {{/if}}
+                            </div>
+                            <div class="article-info col-lg-7 col-md-7">
+                                <h2 class="article-tit">{{{title}}}</h2>
+                                <span class="article-time">{{dateformat date format="YYYY.MM.DD"}}</span>
+                                {{#if abstract}}
+                                    <p>{{abstract}}</p>
+                                {{/if}}
+                            </div>
+                        </a>
+                    </li>
                 {{/foreach}}
-            </div>
+            </ul>
+            {{>pagination}}
+        </div>
+        <div class="col-lg-1 col-md-1"></div>
+        <!--右-->
+        <div class="col-lg-4 col-md-4 article-tags">
+            {{#foreach lists}}
+                <a href="{{path}}" class="col-lg-12 col-md-12 tags">
+                    <div class="tag-{{description}}">
+                        <h2 class="col-lg-4 col-md-4">{{name}}</h2>
+                        <div class="col-lg-8 col-md-8 img-tag"></div>
+                    </div>
+                </a>
+            {{/foreach}}
         </div>
     </div>
-    {{>pagination}}
 </div>
