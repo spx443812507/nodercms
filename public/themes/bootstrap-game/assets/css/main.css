@@ -93,6 +93,10 @@ h6, .h6 {
     color: #ffffff;
 }
 
+.page-header .logo {
+    max-width: 256px;
+}
+
 .page-header .social-bar {
     margin: 10px 0 10px;
     color: #adadad;
