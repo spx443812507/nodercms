@@ -2,7 +2,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">栏目阅读总排行</div>
         <ul class="list-group">
-            {{#foreach readingList.total limit="5"}}
+            {{#foreach readingList.total limit="10"}}
                 <a href="{{href}}" class="list-group-item text-overflow">
                     <div class="card-img">
                         <img alt="img" src="{{thumbnail.src}}">
@@ -26,7 +26,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">栏目阅读本月排行</div>
         <ul class="list-group">
-            {{#foreach readingList.month limit="5"}}
+            {{#foreach readingList.month limit="10"}}
                 <a href="{{href}}" class="list-group-item text-overflow">
                     <div class="card-img">
                         <img alt="img" src="{{thumbnail.src}}">
@@ -50,7 +50,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">栏目阅读本周排行</div>
         <ul class="list-group">
-            {{#foreach readingList.week limit="5"}}
+            {{#foreach readingList.week limit="10"}}
                 <a href="{{href}}" class="list-group-item text-overflow">
                     <div class="card-img">
                         <img alt="img" src="{{thumbnail.src}}">
