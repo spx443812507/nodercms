@@ -94,7 +94,8 @@ h6, .h6 {
 }
 
 .page-header .logo {
-    max-width: 256px;
+    max-width: 150px;
+    max-height: 150px;
 }
 
 .page-header .social-bar {
@@ -314,7 +315,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 
 .play-btn {
     position: fixed;
-    bottom: 50px;
+    bottom: 100px;
     margin-left: -100px;
     left: 50%;
     right: 0;
