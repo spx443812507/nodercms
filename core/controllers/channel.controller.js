@@ -14,7 +14,7 @@ module.exports = function(req, res, next) {
   var channelPath = '/' + req.params.channel + req.params[0];
 
   categoriesService.one({
-    path: channelPath,
+    _id: req.query.id,
     type: 'channel'
   }, function(err, category) {
     if (err) return res.status(500).end();
@@ -44,7 +44,7 @@ module.exports = function(req, res, next) {
     }, function(err, results) {
       if (err) return res.status(500).end();
 
-      res.render(_.get(category, 'views.channel'), {
+      res.status(200).json({
         layout: _.get(category, 'views.layout'),
         bg: '/themes/' + results.siteInfo.theme + '/img/post-bg.jpg',
         siteInfo: results.siteInfo,

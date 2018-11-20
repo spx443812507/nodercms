@@ -26,7 +26,7 @@ module.exports = function(req, res, next) {
   }
 
   categoriesService.one({
-    path: '/' + req.params.column + req.params[0],
+    _id: req.query.id,
     type: 'column'
   }, function(err, category) {
     if (err) return res.status(500).end();
@@ -87,8 +87,7 @@ module.exports = function(req, res, next) {
       }
     }, function(err, results) {
       if (err) return res.status(500).end();
-
-      res.render(_.get(category, 'views.column'), {
+      res.status(200).json({
         layout: _.get(category, 'views.layout'),
         siteInfo: results.siteInfo,
         navigation: results.navigation,

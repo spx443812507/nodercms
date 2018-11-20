@@ -31,7 +31,7 @@ module.exports = function(req, res) {
   }, function(err, results) {
     if (err) return res.status(500).end();
 
-    res.render('home', {
+    res.status(200).json({
       layout: 'layout-default',
       bg: '/themes/' + results.siteInfo.theme + '/img/home-bg.jpeg',
       siteInfo: results.siteInfo,

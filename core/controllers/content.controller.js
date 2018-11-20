@@ -12,16 +12,14 @@ var listsService = require('../services/lists.service');
  * @param {Function} next
  */
 module.exports = function (req, res, next) {
-  if (!req.params[0]) return next();
-
   contentsService.one({
-    alias: _(req.params[0]).split('/').last()
+    _id: req.query.id
   }, function (err, content) {
     if (err) return res.status(500).end();
 
     if (!content) return next();
 
-    var categoryPath = '/' + req.params.content + _(req.params[0]).split('/').initial().join('/');
+    var categoryPath = _(content.url).split('/').initial().join('/');
 
     async.auto({
       siteInfo: siteInfoService.get,
@@ -55,7 +53,7 @@ module.exports = function (req, res, next) {
       if (err && !results.category) return next();
       if (err) return res.status(500).end();
 
-      res.render(_.get(results.category, 'views.content'), {
+      res.status(200).json({
         layout: _.get(results.category, 'views.layout'),
         siteInfo: results.siteInfo,
         navigation: results.navigation,

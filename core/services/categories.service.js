@@ -201,7 +201,7 @@ exports.one = function (options, callback) {
           return _.pick(_.find(categories, function (category) {
             var regex = new RegExp('\/' + subPath + '$');
             return regex.test(category.path);
-          }), ['name', 'path']);
+          }), ['name', 'path', 'type', '_id']);
         })
         .value();
 

@@ -192,16 +192,16 @@ module.exports = {
   '/search': { get: 'search' },
 
   // 频道页
-  '/:channel*': { get: 'channel' },
+  '/channel': { get: 'channel' },
 
   // 栏目页
-  '/:column*': { get: 'column' },
+  '/column': { get: 'column' },
 
   // 单页
   '/:page*': { get: 'page' },
 
   // 内容页
-  '/:content*': { get: 'content' },
+  '/content': { get: 'content' },
 
   // 内容页
   '/:content*/play': { get: 'play' },
