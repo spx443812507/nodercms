@@ -75,7 +75,7 @@ exports.all = function (callback) {
           contents.find({ category: category._id, status: 'pushed', deleted: false, date: { $lte: new Date() } })
             .sort('-date')
             .limit(50)
-            .select('category title alias user date reading thumbnail')
+            .select('category title alias user date reading thumbnail extensions')
             .populate('category', 'name path')
             .populate('user', 'nickname email')
             .populate('thumbnail', 'fileName description date')
