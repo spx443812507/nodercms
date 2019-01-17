@@ -10,11 +10,11 @@ var categoriesService = require('../services/categories.service');
  * @param {Object} res
  * @param {Function} next
  */
-module.exports = function (req, res, next) {
+module.exports = function(req, res, next) {
   // 查询单页
   pagesService.one({
-    path: '/' + req.params.page + req.params[0]
-  }, function (err, page) {
+    _id: req.query.id
+  }, function(err, page) {
     if (err) return res.status(500).end();
 
     if (!page) return next();
@@ -22,11 +22,11 @@ module.exports = function (req, res, next) {
     // 读取单页所需数据
     async.parallel({
       siteInfo: siteInfoService.get,
-      navigation: function (callback) {
-        categoriesService.navigation({ current: page.path }, callback);
+      navigation: function(callback) {
+        categoriesService.navigation({current: page.path}, callback);
       }
-    }, function (err, results) {
-      res.render(page.views.page, {
+    }, function(err, results) {
+      res.status(200).json({
         layout: page.views.layout,
         siteInfo: results.siteInfo,
         navigation: results.navigation,

@@ -54,7 +54,7 @@
             <td ng-repeat="item in model.extensions">
               <span ng-if="!feature.extensions[item.key]">-</span>
               <span ng-if="feature.extensions[item.key] && item.type === 'media'">{{feature.extensions[item.key].length}} 个媒体</span>
-              <span ng-if="feature.extensions[item.key] && item.type !== 'media'">{{feature.extensions[item.key] | words: 20}}</span>
+              <span ng-if="feature.extensions[item.key] && item.type !== 'media'">{{feature.extensions[item.key] | words: 30}}</span>
             </td>
             <td ng-if="editAuth">
               <a ng-disabled="transmitting" ng-click="transmitting ? $event.preventDefault() : false" ui-sref="main.features.update({ model: model._id, feature: feature._id })" class="btn btn-default btn-xs"><i class="fa fa-edit"></i> 修改</a>
